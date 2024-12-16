@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        /* تكبير الأرقام في العد التنازلي */
+        #timer {
+            font-size: 50px; /* يمكنك تعديل الحجم هنا */
+            font-weight: bold;
+        }
+    </style> تنويه: تم شراء واير اير كونديشر بقوة 87 واط  صناعة اميريكية والي يغيب او يتاخر يوم الاحد راح يجربه</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <p id="timer"></p>
+    <p id="description">"السلام عليكم ورحمة الله
+
+أعزائي الطلاب، كما هو موضح أعلاه فهذا العد هو العد التنازلي لبداية الفصل الدراسي الثاني في مديرية الريدة وقصيعر واللي يغيب عن الوقت المحدد يتحمل مسؤلية نفسه
+
+
+
+مدير ثانوية الفقيد السقطري : اللواء الركن مهدي علي الجريري"
+</p>
+
+    <script>
+        var countDownDate = new Date("Dec 22, 2024 07:30:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
